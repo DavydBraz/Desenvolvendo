@@ -4,6 +4,8 @@ import java.util.ArrayList;
 public class Tabela_Pagina {
   ArrayList<Pagina_Virtual> Tabela_das_Paginas = new ArrayList<Pagina_Virtual>();// o arraylist entra na questao para
                                                                                  // fazer a tabela das paginas
+  
+  //aqui teria algo que relaciona-se com os endereços da memoria fisica com as endereços virtuais (paginas virtuais)
   // CRUDzinho base
   public void adicionar(Pagina_Virtual x) {
     // vai ser chamado quando precisar adicionar uma nova pagina, acredito que
