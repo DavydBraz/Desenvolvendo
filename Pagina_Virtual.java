@@ -1,10 +1,15 @@
-public class Pagina_Virtual {// Estrutura basica que ele quer da pagina
-  private int Referenciada;//botei int e nao boolean pq para comparar apresenta erro que nao da para comparar int com boolean
-  private int Modificada;
-  private int Presente_Ausente;
+//acho que terminei, so falta por os conceitos
+public class Pagina_Virtual {// Estrutura basica da pagina
+  
+  //a estrutura correspondente da pagina virtual na memoria fisica é o quadro de pagina
+  
+  private int Referenciada;//botei int e nao boolean pq para comparar apresenta erro que nao da para comparar int com boolean, ai para nao ter que fazer um tratamento so para isso, ai abstrai que fica melhor, referenciada é caso ela tenha sido referenciada, ou seja, usada para leitura ou escrita
+  
+  private int Modificada;//se foi modificado, ou seja, ta 1, vai ser chamado de bit sujo e deve ser salvo no disco. Se nao foi modificado esta limpa e pode ser abandonada
+  private int Presente_Ausente;//se está presente na memoria fisica será 1, caso contrario será 0 e se for 0 no momento que ele for solicitada vai gerar falta de página.
+  
   private int Num_Moldura_Pagina;// aqui seria bits, mas da para abstrair e dizer que é um inteiro, afinal depois
-                                 // ele seria transformado pelo MMU basicamente, só to abstraindo essa parte,
-                                 // desde que seja justificado acho que ta tranquilo.
+                                 // ele seria transformado pelo MMU basicamente
 
   public Pagina_Virtual(int Referenciada, int Modificada, int Presente_Ausente, int Num_Moldura_Pagina) {// Construtor
     this.Referenciada = Referenciada;
