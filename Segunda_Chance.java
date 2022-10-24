@@ -1,30 +1,31 @@
 //aqui vai ser o algoritmo de segunda chance, no caso acho que ele vai pegar da tabela de paginas a pagina virtual, faz mais sentido na minha visao que funcione assim
-public class Segunda_Chance {
+
+//alem disso, lembrar que ele so ocorre quando tem falta de pagina(pagefault)
+//falta colocar aqui os conceitos
+public class Segunda_Chance {//ta incompleto
+  
   Tabela_Pagina pagvirtual;
 
-  // so botei esse construtor na doida talvez seja inutil
+  // so botei esse construtor na doida talvez seja inutil, e talvez precise de um vazio tbm
   public Segunda_Chance(Tabela_Pagina pagvirtual) {
     this.pagvirtual = pagvirtual;
   }
 
   // mesma coisa pros get e sets
-  public void setpagvirtual(Tabela_Pagina pagvirtual) {
-    this.pagvirtual = pagvirtual;
+  public void setPagVirtual(Tabela_Pagina pagvirtual) {//serve para atualizar
+    this.pagvirtual = pagvirtual;//aqui ta meio confuso, cuidado arrumar
   }
-
-  /*
-  public Pagina_Virtual getpagvirtual(Pagina_Virtual u) {
-    int loc= pagvirtual.indexOf(u);
-    return pagvitural.get(loc);
-    */
-    // depois arrumar isso
-/*    if (pagvirtual.get(loc).getReferenciada() == 0) {//tem que ajeitar aqui depois
-      // remove da memoria
-    } else if (pagvirtual.getPag().getReferenciada() == 1) {
-      // da a segunda chance, manda pro final e zera o bit de referenciada
+  
+  public void Verificar_Algoritmo(Pagina_Virtual pag) {
+    if (pagvirtual.procurar(pag).getReferenciada() == 0){
+      //aqui tem que verificar a questao de ser sujo ou limpo que o livro menciona para ver o que faz com ele
+      pagvirtual.remover(pag);
+    }else if(pagvirtual.procurar(pag).getReferenciada()==1){
+      pagvirtual.procurar(pag);
+      Pagina_Virtual Nov_pos= pagvirtual.remover(pag);
+      pagvirtual.adicionar(Nov_pos);
+      pagvirtual.procurar(pag).setReferenciada(0);//tem que passar o indice
     }
-    return pagvirtual.get(loc);
   }
-*/
 
 }
