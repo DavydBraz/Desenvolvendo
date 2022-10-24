@@ -1,4 +1,5 @@
 //atencao as informacoes a seguir podem estar faltando algo, sao apenas alguns ponto que eu tava lendo sobre o assunto
+//o codigo ainda nao esta funcionando, esta faltando reajustes.
 
 // aqui vou por as principais caracteristicas e suas ligacoes com o codigo eu
 // acho, por enquanto vou so ir pondo informacoes relevantes, depois arrumo
